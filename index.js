@@ -1,6 +1,7 @@
 import "dotenv/config";
 
 import express from "express";
+import ledgerRoutes from "./src/routes/ledgerRoutes.js";
 import cors from "cors";
 
 import connectDB from "./src/config/db.js";
@@ -32,6 +33,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/admin", adminAuthRoutes);
+app.use("/api/ledger", ledgerRoutes);
 app.use("/api/services", serviceRoutes);
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/testimonials", testimonialRoutes);
