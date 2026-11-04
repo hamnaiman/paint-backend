@@ -7,7 +7,16 @@ const gallerySchema = new mongoose.Schema({
   },
   hex: {
     type: String,
-    required: true,
+    default: "",
+  },
+  type: {
+    type: String,
+    enum: ["color", "texture"],
+    default: "color",
+  },
+  image: {
+    type: String,
+    default: "",
   },
 });
 
